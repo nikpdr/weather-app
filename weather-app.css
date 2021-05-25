@@ -1,0 +1,106 @@
+body {
+  font-family: "rubik", sans-serif;
+}
+.container {
+  max-width: 750px;
+  max-height: 600px;
+  border: 1px solid #5282b1;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(215, 223, 252) 0%,
+    rgb(255, 255, 255) 0%,
+    rgb(215, 223, 252) 84%
+  );
+  border-radius: 20px;
+}
+.background-emoji {
+  position: absolute;
+  opacity: 0.1;
+  font-size: 200px;
+  left: 825px;
+}
+.searchbar {
+  border: 1px solid;
+  border-radius: 5px;
+  line-height: 4px;
+  padding: 8px;
+}
+#current-city-btn {
+  position: relative;
+  right: 20px;
+  top: 1px;
+}
+
+.current-city {
+  font-size: 35px;
+  font-weight: 400;
+}
+.current-day {
+  font-size: 20px;
+  position: relative;
+  bottom: 15px;
+}
+#current-date {
+  font-size: 20px;
+  position: relative;
+  bottom: 15px;
+  left: 7px;
+}
+#current-time {
+  font-size: 20px;
+  position: relative;
+  bottom: 15px;
+  left: 7px;
+}
+.conditions {
+  font-size: 20px;
+  opacity: 0.35;
+  position: relative;
+  bottom: 35px;
+}
+.current-temp {
+  font-size: 60px;
+  bottom: 30px;
+}
+#units {
+  font-size: 12px;
+  text-decoration: none;
+  position: relative;
+  bottom: 30px;
+}
+
+.main-emoji {
+  position: relative;
+  font-size: 95px;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+}
+.hi-low {
+  position: relative;
+  top: 30px;
+  font-size: 18px;
+}
+.rain-wind {
+  position: relative;
+  top: 30px;
+  font-size: 18px;
+}
+.forecast {
+  font-size: 25px;
+  position: relative;
+  bottom: 35px;
+}
+
+.card {
+  text-align: center;
+  background-color: #fafbfe;
+  border: 1px solid #5282b1;
+  border-radius: 10px;
+  padding: 5px;
+  position: relative;
+  bottom: 25px;
+}
+.col-2 {
+  width: 20%;
+}
