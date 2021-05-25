@@ -104,3 +104,7 @@ body {
 .col-2 {
   width: 20%;
 }
+
+#open-src-link {
+  text-align: center;
+}
