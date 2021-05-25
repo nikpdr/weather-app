@@ -106,5 +106,6 @@ body {
 }
 
 #open-src-link {
-  text-align: center;
+  display: block;
+  margin: 0 auto;
 }
