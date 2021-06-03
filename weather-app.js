@@ -27,10 +27,10 @@ function showTemperature(response) {
     response.data.wind.speed
   );
   document.querySelector("#temp-max").innerHTML = Math.round(
-    response.data.main.temp.temp_max
+    response.data.main.temp_max
   );
   document.querySelector("#temp-min").innerHTML = Math.round(
-    response.data.main.temp.temp_min
+    response.data.main.temp_min
   );
   document.querySelector("#conditions").innerHTML =
     response.data.weather[0].description;
