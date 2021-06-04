@@ -38,8 +38,13 @@
               <span class="current-day" id="current-day">Thursday</span><span id="current-date"></span> <span id="current-time"></span><br>
               <span class="conditions" id="conditions">Partly Cloudy</span></div>
             <div class="col-3 current-temp"><span id="temperature">63</span>
-              <span id="units"> <a href="#" id="fahrenheit">°F |</a>
-              <a href="#" id="celsius">°C</a> </span><span class="main-emoji"> 🌤</span></div>
+              
+              <span id="units"> <a href="#" id="celsius" class="active">°C |</a>
+                <a href="#" id="fahrenheit">°F</a>
+              </span><br>
+              <span>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="main-emoji" id="weather-icon"> </span>
+              </div>
             <div class="col-2 hi-low">High: <span id="temp-max">63</span><br>Low: <span id="temp-min"> 53</span></div>
             <div class="col-4 rain-wind">Humidity: <span id="humidity"></span>% <br>Wind: <span id="wind"></span> mph</div>
           </div>

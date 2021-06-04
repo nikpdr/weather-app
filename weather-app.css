@@ -5,11 +5,10 @@ body {
   max-width: 750px;
   max-height: 600px;
   border: 1px solid #5282b1;
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(215, 223, 252) 0%,
-    rgb(255, 255, 255) 0%,
-    rgb(215, 223, 252) 84%
+  background: linear-gradient(
+    -225deg,
+    rgb(183, 248, 219) 0%,
+    rgb(80, 167, 194) 100%
   );
   border-radius: 20px;
 }
@@ -71,9 +70,9 @@ body {
 
 .main-emoji {
   position: relative;
-  font-size: 95px;
+  width: 100%;
   bottom: 20px;
-  left: 20px;
+  left: 10px;
   margin: 0;
 }
 .hi-low {
@@ -103,6 +102,13 @@ body {
 }
 .col-2 {
   width: 20%;
+}
+.active {
+  color: black;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
 }
 
 #open-src-link {
