@@ -17,12 +17,41 @@ function retrieveWeather(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    mintes = `0${minutes}`;
+  }
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  let day = days[date.getDay()];
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[date.getMonth()];
+  let currentDate = date.getDate();
+  return `${day} ${month} ${currentDate} ${hours}:${minutes}`;
+}
+
 function showTemperature(response) {
   console.log(response.data);
   let weatherIcon = document.querySelector("#weather-icon");
   let temp = Math.round(response.data.main.temp);
   let tempDisplay = document.querySelector("#temperature");
   tempDisplay.innerHTML = `${temp}`;
+  let dateElement = document.querySelector("#date");
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -40,6 +69,7 @@ function showTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   celsiusTemperature = response.data.main.temp;
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 function getGeolocation() {
   navigator.geolocation.getCurrentPosition(getPosition);
@@ -64,36 +94,6 @@ function showCurrentCityTemp(response) {
 }
 let currentCityBtn = document.querySelector("#current-city-btn");
 currentCityBtn.addEventListener("click", getGeolocation);
-
-let now = new Date();
-let days = ["Sun", "Mon", "Tues", "Weds", "Thurs", "Fri", "Sat"];
-let day = days[now.getDay()];
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sept",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[now.getMonth()];
-let date = now.getDate();
-let hour = now.getHours();
-let minute = now.getMinutes();
-
-let currentDay = document.querySelector("#current-day");
-let currentDate = document.querySelector("#current-date");
-let currentTime = document.querySelector("#current-time");
-
-currentDay.innerHTML = `${day}`;
-currentDate.innerHTML = `${month} ${date}`;
-currentTime.innerHTML = `${hour}:${minute}`;
 
 function changeToFahrenheit(event) {
   event.preventDefault();
