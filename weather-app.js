@@ -22,7 +22,7 @@ function formatDate(timestamp) {
   let hours = date.getHours();
   let minutes = date.getMinutes();
   if (minutes < 10) {
-    mintes = `0${minutes}`;
+    minutes = `0${minutes}`;
   }
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   let day = days[date.getDay()];

@@ -9,44 +9,75 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="weather-app.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="weather-app.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-    
   </head>
 
   <body>
     <div class="container">
       <div class="row">
-      <form class="citySearch col-5" id="city-form">
-        <input type="text" class="searchbar" placeholder="Enter city" id="city-input" />
-        <input type="submit" class="btn btn-primary" value="Search" />
-        
-      </form>
-      
-      <span class="col-7"><input type="submit" class="btn btn-secondary" id="current-city-btn" value="Current City"></span>
+        <form class="citySearch col-5" id="city-form">
+          <input
+            type="text"
+            class="searchbar"
+            placeholder="Enter city"
+            id="city-input"
+          />
+          <input type="submit" class="btn btn-primary" value="Search" />
+        </form>
+
+        <span class="col-7"
+          ><input
+            type="submit"
+            class="btn btn-secondary"
+            id="current-city-btn"
+            value="Current City"
+        /></span>
       </div>
       <div class="background-emoji">🌤</div>
       <header>
-      <div class="container-summary">
+        <div class="container-summary">
           <div class="row">
-            <div class="col-11 current-city"> <span id="current-city">Los Angeles</span> <br> 
-              <span class="current-day" id="date">Thursday June 3 05:00</span><br>
-              <span class="conditions" id="conditions">Partly Cloudy</span></div>
-            <div class="col-3 current-temp"><span id="temperature">63</span>
-              
-              <span id="units"> <a href="#" id="celsius" class="active">°C |</a>
-                <a href="#" id="fahrenheit">°F</a>
-              </span><br>
+            <div class="col-11 current-city">
+              <span id="current-city">Los Angeles</span> <br />
+              <span class="current-day" id="date">Thursday June 3 05:00</span
+              ><br />
+              <span class="conditions" id="conditions">Partly Cloudy</span>
+            </div>
+            <div class="col-3 current-temp">
+              <span id="temperature">63</span>
+
+              <span id="units">
+                <a href="#" id="celsius" class="active">°C |</a>
+                <a href="#" id="fahrenheit">°F</a> </span
+              ><br />
               <span>
-                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="main-emoji" id="weather-icon"> </span>
-              </div>
-            <div class="col-2 hi-low">High: <span id="temp-max">63</span><br>Low: <span id="temp-min"> 53</span></div>
-            <div class="col-4 rain-wind">Humidity: <span id="humidity"></span>% <br>Wind: <span id="wind"></span> mph</div>
+                <img
+                  src="https://openweathermap.org/img/wn/10d@2x.png"
+                  alt="weather-icon"
+                  class="main-emoji"
+                  id="weather-icon"
+                />
+              </span>
+            </div>
+            <div class="col-2 hi-low">
+              High: <span id="temp-max">63</span><br />Low:
+              <span id="temp-min"> 53</span>
+            </div>
+            <div class="col-4 rain-wind">
+              Humidity: <span id="humidity"></span>% <br />Wind:
+              <span id="wind"></span> mph
+            </div>
           </div>
         </div>
       </header>
@@ -54,27 +85,29 @@
         <p>This weeks weather forecast:</p>
       </div>
       <div class="row">
-          <div class="col-2">
-            <div class="card day-one">Friday <br>🌤 <br>60°F <br>53°F</div>
-          </div>
-          <div class="col-2">
-            <div class="card">Saturday <br>☀️ <br>60°F <br>53°F</div>
-          </div>
-          <div class="col-2">
-            <div class="card">Sunday <br>☁️ <br>60°F <br>51°F</div>
-          </div>
-          <div class="col-2">
-            <div class="card">Monday <br>🌤 <br>57°F <br>53°F</div>
-          </div>
-          <div class="col-2">
-              <div class="card">Tuesday <br>☀️ <br>62°F <br>51°F</div>
+        <div class="col-2">
+          <div class="card">
+            Friday
+            <img
+              src="http://openweathermap.org/img/wn/02d@2x.png"
+              alt=""
+              class="forecast-image"
+              width="35px"
+            />
+            <div class="forecast-temperatures">
+              <span class="forecast-high">28° |</span>
+              <span class="forecast-low"> 18°</span>
             </div>
+          </div>
         </div>
-        </div>
-        <div id="open-src-link">
-        <a href="https://github.com/nikpdr/weather-app" target="_blank">Open-source code</a> <span> by Niki McCalmont</span>
-    </div>
       </div>
+      <div id="open-src-link">
+        <a href="https://github.com/nikpdr/weather-app" target="_blank"
+          >Open-source code</a
+        >
+        <span> by Niki McCalmont</span>
+      </div>
+    </div>
     <script src="weather-app.js"></script>
   </body>
 </html>

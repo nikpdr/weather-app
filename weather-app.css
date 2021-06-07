@@ -82,7 +82,7 @@ body {
 
 .card {
   text-align: center;
-  background-color: #fafbfe;
+  background-color: #b6f7db;
   border: 1px solid #5282b1;
   border-radius: 10px;
   padding: 5px;
@@ -91,6 +91,15 @@ body {
 }
 .col-2 {
   width: 20%;
+}
+.forecast-image {
+  margin: 0 auto;
+}
+.forecast-temperatures {
+  font-size: 13px;
+}
+.forecast-low {
+  opacity: 0.6;
 }
 .active {
   color: black;
