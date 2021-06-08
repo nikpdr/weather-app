@@ -92,6 +92,12 @@ body {
 .col-2 {
   width: 20%;
 }
+.forecast {
+  padding-top: 20px;
+}
+.forecast-date {
+  font-size: 20px;
+}
 .forecast-image {
   margin: 0 auto;
 }

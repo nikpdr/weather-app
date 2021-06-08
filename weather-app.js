@@ -71,6 +71,37 @@ function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+            <div class="card">
+              <div class="forecast-date">${day}</div>
+              <img
+                src="http://openweathermap.org/img/wn/02d@2x.png"
+                alt=""
+                class="forecast-image"
+                width="35px"
+              />
+              <div class="forecast-temperatures">
+                <span class="forecast-high">28° |</span>
+                <span class="forecast-low"> 18°</span>
+              </div>
+            </div>
+          </div>
+        `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function getGeolocation() {
   navigator.geolocation.getCurrentPosition(getPosition);
 }
@@ -109,6 +140,8 @@ function changeToCelsius(event) {
 }
 
 let celsiusTemperature = null;
+
+displayForecast();
 
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", changeToFahrenheit);
