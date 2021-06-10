@@ -12,12 +12,7 @@ body {
   );
   border-radius: 20px;
 }
-.background-emoji {
-  position: absolute;
-  opacity: 0.1;
-  font-size: 200px;
-  left: 825px;
-}
+
 .searchbar {
   border: 1px solid;
   border-radius: 5px;
@@ -34,17 +29,19 @@ body {
   font-size: 35px;
   font-weight: 400;
 }
+.last-updated {
+  font-size: 20px;
+  opacity: 0.35;
+}
 .current-day {
   font-size: 20px;
   position: relative;
-  bottom: 15px;
 }
 
 .conditions {
   font-size: 20px;
   opacity: 0.35;
   position: relative;
-  bottom: 35px;
 }
 .current-temp {
   font-size: 60px;
@@ -107,14 +104,6 @@ body {
 .forecast-low {
   opacity: 0.6;
 }
-.active {
-  color: black;
-  cursor: default;
-}
-.active:hover {
-  text-decoration: none;
-}
-
 #open-src-link {
   text-align: center;
 }

@@ -41,7 +41,11 @@ function formatDate(timestamp) {
   ];
   let month = months[date.getMonth()];
   let currentDate = date.getDate();
-  return `${day} ${month} ${currentDate} ${hours}:${minutes}`;
+  return `${day} ${month} ${currentDate} ${date.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  })}`;
 }
 
 function getForecast(coordinates) {
