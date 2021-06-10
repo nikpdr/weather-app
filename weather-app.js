@@ -11,8 +11,7 @@ cityForm.addEventListener("submit", searchCity);
 
 function retrieveWeather(city) {
   let apiKey = "b3588d10137e7691b17d27af3f8dd9d5";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(showTemperature);
 }
@@ -47,7 +46,7 @@ function formatDate(timestamp) {
 
 function getForecast(coordinates) {
   let apiKey = "b3588d10137e7691b17d27af3f8dd9d5";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(displayForecast);
 }
@@ -131,11 +130,11 @@ function getGeolocation() {
   navigator.geolocation.getCurrentPosition(getPosition);
 }
 function getPosition(position) {
+  console.log(position);
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  let units = "metric";
   let apiKey = "b3588d10137e7691b17d27af3f8dd9d5";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(showCurrentCityTemp);
 }
@@ -147,6 +146,16 @@ function showCurrentCityTemp(response) {
   let usersCity = document.querySelector("#current-city");
   currentTemp.innerHTML = `${temperature}`;
   usersCity.innerHTML = `${city}`;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#temp-max").innerHTML = Math.round(
+    response.data.main.temp_max
+  );
+  document.querySelector("#temp-min").innerHTML = Math.round(
+    response.data.main.temp_min
+  );
 }
 let currentCityBtn = document.querySelector("#current-city-btn");
 currentCityBtn.addEventListener("click", getGeolocation);
