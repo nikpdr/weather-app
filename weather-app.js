@@ -62,6 +62,9 @@ function showTemperature(response) {
   let tempDisplay = document.querySelector("#temperature");
   tempDisplay.innerHTML = `${temp}`;
   let dateElement = document.querySelector("#date");
+  let city = response.data.name;
+  let usersCity = document.querySelector("#current-city");
+  usersCity.innerHTML = `${city}`;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -140,27 +143,9 @@ function getPosition(position) {
   let apiKey = "b3588d10137e7691b17d27af3f8dd9d5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
 
-  axios.get(apiUrl).then(showCurrentCityTemp);
+  axios.get(apiUrl).then(showTemperature);
 }
 
-function showCurrentCityTemp(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let currentTemp = document.querySelector("#temperature");
-  let city = response.data.name;
-  let usersCity = document.querySelector("#current-city");
-  currentTemp.innerHTML = `${temperature}`;
-  usersCity.innerHTML = `${city}`;
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
-  document.querySelector("#temp-max").innerHTML = Math.round(
-    response.data.main.temp_max
-  );
-  document.querySelector("#temp-min").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
-}
 let currentCityBtn = document.querySelector("#current-city-btn");
 currentCityBtn.addEventListener("click", getGeolocation);
 
@@ -185,4 +170,4 @@ fahrenheit.addEventListener("click", changeToFahrenheit);
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", changeToCelsius);
 
-displayForecast();
+retrieveWeather("Los Angeles");
