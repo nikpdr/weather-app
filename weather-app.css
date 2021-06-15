@@ -48,10 +48,11 @@ body {
   bottom: 30px;
 }
 #units {
-  font-size: 12px;
+  font-size: 16px;
   text-decoration: none;
   position: relative;
   bottom: 30px;
+  right: 5px;
 }
 
 .main-emoji {

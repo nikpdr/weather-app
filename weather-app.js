@@ -149,25 +149,4 @@ function getPosition(position) {
 let currentCityBtn = document.querySelector("#current-city-btn");
 currentCityBtn.addEventListener("click", getGeolocation);
 
-function changeToFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitTemp = document.querySelector("#temperature");
-  fahrenheitElement = (celsiusTemperature * 9) / 5 + 32;
-  fahrenheitTemp.innerHTML = Math.round(fahrenheitElement);
-}
-
-function changeToCelsius(event) {
-  event.preventDefault();
-  let celsiusElement = document.querySelector("#temperature");
-  celsiusElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", changeToFahrenheit);
-
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", changeToCelsius);
-
 retrieveWeather("Los Angeles");
